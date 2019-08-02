@@ -1,0 +1,26 @@
+language: python
+
+python:
+    - "3.7-dev"
+
+services:
+    - postgresql
+
+env:
+    - repo_token: $REPO_TOKEN
+
+install:
+    - pip install -r requirements.txt
+    - pip install codecov
+
+before_script:
+    - psql -c "create database iot_dashboad_db;" -U postgres
+    - python manage.py makemigrations
+    - python manage.py migrate
+
+script:
+    - coverage run --source='.' manage.py test
+    - bash <(curl -s https://codecov.io/bash)
+
+after_success:
+    - codecov
