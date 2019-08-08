@@ -6,7 +6,7 @@
 {% block content %}
 
 <div class="col-sm-9 col-md-7 col-lg-6 mx-auto">
-  <div class="card card-signin my-5 border-secondary flex-row">
+  <div class="card card-signin my-5 border-danger flex-row">
     <div class="card-body">
       <h2 class="card-title text-center text-secondary">Login</h2>
       <form method="post">
@@ -34,7 +34,10 @@
           Login
         </button>
         <hr class="my-4" />
-
+        <p class="nav">
+          Already a member? <br>
+          <a href="{% url 'signup' %}" class="nav-item text-danger">Sign up</a>
+        </p>
       </form>
     </div>
   </div>
