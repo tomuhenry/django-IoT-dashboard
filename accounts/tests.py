@@ -15,11 +15,12 @@ class UserSignupTest(TestCase):
         self.assertEqual(resp.status_code, 200)
 
     def test_home_page(self):
-        resp = self.client.get(reverse('home'))
-        self.assertTemplateUsed(resp, 'home.html')
-        self.assertEqual(resp.status_code, 200)
+        resp = self.client.get(reverse('dashboard:dashboard'))
+        self.assertEqual(resp.status_code, 302)
+        self.assertRedirects(resp, '/accounts/login/?next=/')
 
     def test_login_user(self):
         User.objects.create_user(username='john', password='glass onion')
         resp = self.client.post(reverse('login'), {'username': 'john', 'password': 'glass onion'})
         self.assertEqual(resp.status_code, 302)
+        self.assertRedirects(resp, '/')

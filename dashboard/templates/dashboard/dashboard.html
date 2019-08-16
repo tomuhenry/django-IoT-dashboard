@@ -1,0 +1,10 @@
+{% extends "layout.html" %}
+{% load widget_tweaks %}
+
+{% block title %}Home{% endblock title %}
+
+{% block content %}
+    {% for feed in feed_data %}
+        <p>{{ feed }}</p>
+    {% endfor %}
+{% endblock content %}
