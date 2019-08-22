@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'accounts.apps.AccountsConfig',
+    'django_nvd3',
     'widget_tweaks',
     'dashboard',
 ]
@@ -136,5 +137,5 @@ STATICFILES_DIRS = (
 django_heroku.settings(locals())
 
 
-LOGIN_REDIRECT_URL = '/'
-LOGOUT_REDIRECT_URL = '/'
+LOGIN_REDIRECT_URL = '/dashboard/temperature'
+LOGOUT_REDIRECT_URL = '/accounts/login'
