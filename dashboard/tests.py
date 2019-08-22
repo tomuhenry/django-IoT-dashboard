@@ -13,7 +13,6 @@ class DashboardTest(TestCase):
     def test_view(self):
         resp = self.client.get(reverse('dashboard:dashboard'))
         self.assertEqual(resp.status_code, 200)
-        self.assertTemplateUsed(resp, 'dashboard/dashboard.html')
 
     def test_services(self):
         resp = services.get_channel_data()
