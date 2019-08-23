@@ -8,10 +8,15 @@ django-heroku==0.3.1
 django-widget-tweaks==1.4.5
 gunicorn==19.9.0
 idna==2.8
+Jinja2==2.10.1
+MarkupSafe==1.1.1
 psycopg2==2.8.3
 python-decouple==3.1
+python-slugify==1.1.4
 pytz==2019.1
 requests==2.22.0
+six==1.12.0
 sqlparse==0.3.0
+Unidecode==1.1.1
 urllib3==1.25.3
 whitenoise==4.1.3
